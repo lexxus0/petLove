@@ -5,9 +5,9 @@ import deskRegImg from "../assets/images/register/deskRegImg.png";
 import mobLogImg from "../assets/images/login/mobLogImg.png";
 import tabLogImg from "../assets/images/login/tabLogImg.png";
 import deskLogImg from "../assets/images/login/deskLogImg.png";
-import mobAddPetImg from "../assets/images/addPet/mobAddPetImg.png";
-import tabAddPetImg from "../assets/images/addPet/tabAddPetImg.png";
-import deskAddPetImg from "../assets/images/addPet/deskAddPetImg.png";
+import mobAddPetImg from "../assets/images/addpet/mobAddPetImg.png";
+import tabAddPetImg from "../assets/images/addpet/tabAddPetImg.png";
+import deskAddPetImg from "../assets/images/addpet/deskAddPetImg.png";
 
 interface PetBlockProps {
   type: "register" | "login" | "add-pet";

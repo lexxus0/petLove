@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* @font-face {
+  font-family: "Manrope";
+  src: url("../assets/fonts/manrope-font.ttf") format("truetype");
+  font-display: swap;
+} */
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 375px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+    padding: 0;
+  }
+}
+
+button {
+  cursor: pointer;
+}

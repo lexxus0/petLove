@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { loginValidationSchema } from "../../validation/schemas";
-import { useAppDispatch } from "../../store/tools/hooks";
-import { loginUser } from "../../store/auth/operations";
+import { loginValidationSchema } from "../validation/schemas";
+import { useAppDispatch } from "../store/tools/hooks";
+import { loginUser } from "../store/auth/operations";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
@@ -46,32 +46,36 @@ const LoginForm = () => {
             )}
           />
           {errors.email && (
-            <p className="text-sm text-red-500">{errors.email.message}</p>
+            <p className="text-sm text-red-500 mt-2">{errors.email.message}</p>
           )}
         </div>
 
-        <div className="relative xl:mb-10">
-          <Controller
-            name="password"
-            control={control}
-            render={({ field }) => (
-              <input
-                {...field}
-                type={showPassword ? "text" : "password"}
-                className="border w-full h-[42px] font-medium text-sm text-gray-600 pl-3 py-2 rounded-3xl border-gray-300 md:h-[52px]"
-                placeholder="Password"
-              />
-            )}
-          />
-          <button
-            type="button"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            {showPassword ? <FaEye /> : <FaEyeSlash />}
-          </button>
+        <div className=" xl:mb-10">
+          <div className="relative">
+            <Controller
+              name="password"
+              control={control}
+              render={({ field }) => (
+                <input
+                  {...field}
+                  type={showPassword ? "text" : "password"}
+                  className="border w-full h-[42px] font-medium text-sm text-gray-600 pl-3 py-2 rounded-3xl border-gray-300 md:h-[52px]"
+                  placeholder="Password"
+                />
+              )}
+            />
+            <button
+              type="button"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEye /> : <FaEyeSlash />}
+            </button>
+          </div>
           {errors.password && (
-            <p className="text-sm text-red-500">{errors.password.message}</p>
+            <p className="text-sm text-red-500 mt-2">
+              {errors.password.message}
+            </p>
           )}
         </div>
 

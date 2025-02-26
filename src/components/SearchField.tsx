@@ -5,11 +5,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 type SearchFieldProps = {
-  color: string;
-  bg: string;
+  position: string;
 };
 
-const SearchField: React.FC<SearchFieldProps> = ({ color, bg }) => {
+const SearchField: React.FC<SearchFieldProps> = ({ position }) => {
   const dispatch = useAppDispatch();
   const location = useLocation();
 
@@ -27,7 +26,11 @@ const SearchField: React.FC<SearchFieldProps> = ({ color, bg }) => {
         type="text"
         placeholder="Search"
         onChange={handleChange}
-        className={`border relative border-solid ${bg} placeholder:${color}  border-[rgba(38,38,38,0.15)] rounded-[30px] pl-3 py-3 w-full h-[42px] text-sm  mb-3 md:w-[265px] md:h-11 md:text-base md:mb-0`}
+        className={` relative border rounded-[30px] pl-3 py-3 w-full h-[42px] text-sm  mb-3 md:w-[265px] md:h-11 border-[rgba(38,38,38,0.15)] md:text-base md:mb-0 ${
+          position === "news"
+            ? "placeholder:text-[rgba(38,38,38,0.5)] border-solid"
+            : "placeholder:text-black bg-white"
+        }`}
       />
       <RxMagnifyingGlass className="absolute right-3 top-3 size-5" />
     </div>

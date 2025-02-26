@@ -1,6 +1,6 @@
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { addPetValidationSchema } from "../../validation/schemas";
+import { addPetValidationSchema } from "../validation/schemas";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
@@ -9,8 +9,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { CiCalendar } from "react-icons/ci";
 import { IoPawOutline } from "react-icons/io5";
 import { MdOutlineCloudUpload } from "react-icons/md";
-import { useAppDispatch } from "../../store/tools/hooks";
-import { addPetToUser } from "../../store/auth/operations";
+import { useAppDispatch } from "../store/tools/hooks";
+import { addPetToUser } from "../store/auth/operations";
 import { format } from "date-fns";
 
 const AddPetForm = () => {
@@ -187,8 +187,10 @@ const AddPetForm = () => {
                   type="text"
                   className="border w-[57.5%] h-[42px] text-sm pl-3 py-2 rounded-3xl border-gray-300 md:w-[70%] truncate"
                   placeholder="Enter URL"
-                  value={avatarInput}
-                  onChange={(e) => setAvatarInput(e.target.value)}
+                  onChange={(e) => {
+                    field.onChange(e);
+                    setAvatarInput(e.target.value);
+                  }}
                 />
               )}
             />
@@ -204,7 +206,7 @@ const AddPetForm = () => {
             </label>
           </div>
           {errors.imgURL && (
-            <p className="text-sm text-red-500">{errors.imgURL.message}</p>
+            <p className="text-sm text-red-500 mb-2">{errors.imgURL.message}</p>
           )}
         </div>
         <div>
@@ -221,7 +223,7 @@ const AddPetForm = () => {
             )}
           />
           {errors.title && (
-            <p className="text-sm text-red-500">{errors.title.message}</p>
+            <p className="text-sm text-red-500 mb-2">{errors.title.message}</p>
           )}
         </div>
 
@@ -239,7 +241,7 @@ const AddPetForm = () => {
             )}
           />
           {errors.name && (
-            <p className="text-sm text-red-500">{errors.name.message}</p>
+            <p className="text-sm text-red-500 mb-2">{errors.name.message}</p>
           )}
         </div>
 
@@ -253,7 +255,7 @@ const AddPetForm = () => {
                   <DatePicker
                     selected={value ? new Date(value) : null}
                     onChange={(date: Date | null) => {
-                      onChange(date ? format(date, "yyyy-MM-dd") : ""); // Convert to YYYY-MM-DD
+                      onChange(date ? format(date, "yyyy-MM-dd") : "");
                     }}
                     className="border w-full h-[42px] font-medium text-sm text-gray-600 pl-3 py-2 rounded-3xl border-gray-300 md:h-[52px] md:w-[210px]"
                     dateFormat="dd.MM.yyyy"
@@ -265,14 +267,16 @@ const AddPetForm = () => {
             />
             <CiCalendar className="absolute top-3 right-2.5 md:top-4.5 md:right-3.5" />
             {errors.birthday && (
-              <p className="text-sm text-red-500">{errors.birthday.message}</p>
+              <p className="text-sm text-red-500 mb-2">
+                {errors.birthday.message}
+              </p>
             )}
           </div>
           <Controller
             name="species"
             control={control}
             render={({ field }) => (
-              <div className="relative flex-1">
+              <div className="relative flex-1 flex-col">
                 <button
                   type="button"
                   className="border w-full h-[42px] font-medium text-sm text-gray-600 px-3 py-2 rounded-3xl border-gray-300 md:h-[52px] flex justify-between items-center"
@@ -309,12 +313,14 @@ const AddPetForm = () => {
                     ))}
                   </ul>
                 )}
+                {errors.species && (
+                  <p className="text-sm text-red-500 mb-2">
+                    {errors.species.message}
+                  </p>
+                )}
               </div>
             )}
           />
-          {errors.species && (
-            <p className="text-sm text-red-500">{errors.species.message}</p>
-          )}
         </div>
         <div className="flex justify-end w-full mt-8 gap-2 md:font-bold md:font-base">
           <button

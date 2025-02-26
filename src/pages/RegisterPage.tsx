@@ -1,4 +1,4 @@
-import RegisterForm from "../components/forms/RegisterForm";
+import RegisterForm from "../components/RegisterForm";
 import PetBlock from "../components/PetBlock";
 import Title from "../components/Title";
 

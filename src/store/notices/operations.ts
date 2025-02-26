@@ -47,11 +47,8 @@ export const fetchNotices = createAsyncThunk<
       if (popularity !== undefined)
         params.append("byPopularity", String(popularity));
       if (price !== undefined) params.append("byPrice", String(price));
-      console.log(price);
-      console.log(params.toString());
 
       const { data } = await instance.get(`/notices?${params.toString()}`);
-      console.log(data);
 
       return {
         notices: data.results,

@@ -64,7 +64,7 @@ const PetBlock: React.FC<PetBlockProps> = ({ type }) => {
         </picture>
         {type !== "add-pet" && (
           <div className="hidden md:block rounded-[20px] bg-white w-[294px] h-[121px] absolute left-8 bottom-8 xl:left-[61px] xl:bottom-[97px]">
-            <div className="">
+            <div>
               <p className="rounded-full bg-[#fff4df] p-3 size-[60px] text-center text-3xl absolute top-4 left-4">
                 {data.logo}
               </p>

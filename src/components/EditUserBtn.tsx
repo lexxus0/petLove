@@ -7,8 +7,11 @@ const EditUserBtn = () => {
   const toggleModal = () => setIsOpen(!isOpen);
   return (
     <>
-      <div className="absolute top-4.5 right-5 rounded-[30px] size-[38px] bg-[#fff4df] text-center p-3 md:top-10 md:right-10 cursor-pointer">
-        <FiEdit2 className="text-sm text-[#f7b83d]" onClick={toggleModal} />
+      <div
+        className="absolute top-4.5 right-5 rounded-[30px] size-[38px] bg-[#fff4df] text-center p-3 md:top-10 md:right-10 cursor-pointer"
+        onClick={toggleModal}
+      >
+        <FiEdit2 className="text-sm text-[#f7b83d]" />
       </div>
       <ModalEditUser isOpen={isOpen} onClose={toggleModal} />
     </>

@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { registerValidationSchema } from "../../validation/schemas";
-import { registerUser } from "../../store/auth/operations";
-import { useAppDispatch } from "../../store/tools/hooks";
+import { registerValidationSchema } from "../validation/schemas";
+import { registerUser } from "../store/auth/operations";
+import { useAppDispatch } from "../store/tools/hooks";
 import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
@@ -56,7 +56,7 @@ const RegisterForm = () => {
             )}
           />
           {errors.name && (
-            <p className="text-sm text-red-500">{errors.name.message}</p>
+            <p className="text-sm text-red-500 mt-2">{errors.name.message}</p>
           )}
         </div>
 
@@ -74,57 +74,63 @@ const RegisterForm = () => {
             )}
           />
           {errors.email && (
-            <p className="text-sm text-red-500">{errors.email.message}</p>
+            <p className="text-sm text-red-500 mt-2">{errors.email.message}</p>
           )}
         </div>
 
-        <div className="relative">
-          <Controller
-            name="password"
-            control={control}
-            render={({ field }) => (
-              <input
-                {...field}
-                type={showPassword ? "text" : "password"}
-                className="border w-full h-[42px] font-medium text-sm text-gray-600 pl-3 py-2 rounded-3xl border-gray-300 md:h-[52px]"
-                placeholder="Password"
-              />
-            )}
-          />
-          <button
-            type="button"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            {showPassword ? <FaEye /> : <FaEyeSlash />}
-          </button>
+        <div>
+          <div className="relative">
+            <Controller
+              name="password"
+              control={control}
+              render={({ field }) => (
+                <input
+                  {...field}
+                  type={showPassword ? "text" : "password"}
+                  className="border w-full h-[42px] font-medium text-sm text-gray-600 pl-3 py-2 rounded-3xl border-gray-300 md:h-[52px]"
+                  placeholder="Password"
+                />
+              )}
+            />
+            <button
+              type="button"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEye /> : <FaEyeSlash />}
+            </button>
+          </div>
           {errors.password && (
-            <p className="text-sm text-red-500">{errors.password.message}</p>
+            <p className="text-sm text-red-500 mt-2">
+              {errors.password.message}
+            </p>
           )}
         </div>
 
-        <div className="relative xl:mb-8">
-          <Controller
-            name="confirmPassword"
-            control={control}
-            render={({ field }) => (
-              <input
-                {...field}
-                type={showConfirmPassword ? "text" : "password"}
-                className="border w-full h-[42px] font-medium text-sm text-gray-600 pl-3 py-2 rounded-3xl border-gray-300 md:h-[52px]"
-                placeholder="Confirm Password"
-              />
-            )}
-          />
-          <button
-            type="button"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-          >
-            {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
-          </button>
+        <div className="xl:mb-8">
+          <div className="relative">
+            <Controller
+              name="confirmPassword"
+              control={control}
+              render={({ field }) => (
+                <input
+                  {...field}
+                  type={showConfirmPassword ? "text" : "password"}
+                  className="border w-full h-[42px] font-medium text-sm text-gray-600 pl-3 py-2 rounded-3xl border-gray-300 md:h-[52px]"
+                  placeholder="Confirm Password"
+                />
+              )}
+            />
+            <button
+              type="button"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
+            </button>
+          </div>
           {errors.confirmPassword && (
-            <p className="text-sm text-red-500">
+            <p className="text-sm text-red-500 mt-2">
               {errors.confirmPassword.message}
             </p>
           )}

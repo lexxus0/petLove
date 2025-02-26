@@ -32,7 +32,7 @@ const MyNotices = () => {
         </div>
         {active === "favorite" ? (
           <ul className="my-10 flex flex-col gap-5 md:flex-row md:flex-wrap md:mt-11 md:mb-[60px] xl:gap-[31px] xl:mt-10">
-            {Array.isArray(favorites) && favorites !== null ? (
+            {favorites.length !== 0 ? (
               favorites.map((favorite: INotices) => (
                 <NoticesItem
                   key={favorite._id}
@@ -54,7 +54,7 @@ const MyNotices = () => {
           </ul>
         ) : (
           <ul className="my-5 flex flex-col gap-5 md:flex-row md:flex-wrap md:mt-11 md:mb-[60px] xl:gap-[31px] xl:mt-10 xl:flex-row">
-            {Array.isArray(viewed) && viewed !== null ? (
+            {viewed.length !== 0 ? (
               viewed.map((view: INotices) => (
                 <NoticesItem
                   key={view._id}

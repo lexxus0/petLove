@@ -1,13 +1,13 @@
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { EditUserValidationSchema } from "../../validation/schemas";
-import { useAppDispatch, useAppSelector } from "../../store/tools/hooks";
-import { selectUser } from "../../store/auth/selectors";
+import { EditUserValidationSchema } from "../validation/schemas";
+import { useAppDispatch, useAppSelector } from "../store/tools/hooks";
+import { selectUser } from "../store/auth/selectors";
 import { useState } from "react";
 import { MdOutlineCloudUpload } from "react-icons/md";
-import { IUser } from "../../interfaces/interfaces";
-import pic from "../../assets/images/header/notLoggedIn.svg";
-import { editUserInfo } from "../../store/auth/operations";
+import { IUser } from "../interfaces/interfaces";
+import pic from "../assets/images/header/notLoggedIn.svg";
+import { editUserInfo } from "../store/auth/operations";
 import _ from "lodash";
 
 type EditUserFormProps = {
@@ -81,7 +81,7 @@ const EditUserForm: React.FC<EditUserFormProps> = ({ onClose }) => {
           alt="User's avatar"
           className="size-[68px] object-cover rounded-full overflow-hidden  mx-auto  md:size-[86px]"
         />
-        <div className="relative flex gap-2 mb-2.5">
+        <div className="relative flex gap-2 mb-2.5 flex-col">
           <div className="flex gap-2">
             <Controller
               name="avatar"

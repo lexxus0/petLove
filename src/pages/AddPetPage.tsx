@@ -1,4 +1,4 @@
-import AddPetForm from "../components/forms/AddPetForm";
+import AddPetForm from "../components/AddPetForm";
 import PetBlock from "../components/PetBlock";
 
 const AddPetPage = () => {

@@ -1,4 +1,4 @@
-import LoginForm from "../components/forms/LoginForm";
+import LoginForm from "../components/LoginForm";
 import PetBlock from "../components/PetBlock";
 import Title from "../components/Title";
 

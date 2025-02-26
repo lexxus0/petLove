@@ -46,18 +46,6 @@ Login functionality
 
 Protected routes for authenticated users
 
-🎨 Design
-
-The UI/UX design for PetLove is available on Figma. You can view the layout and design specifications here:
-
-PetLove Figma Layout
-
-Please refer to this design while developing to ensure consistency in the user interface.
-
-🗄 Backend
-
-PetLove Backend Docs
-
 ## 🛠️ Technical Stack
 
 ### Core Technologies

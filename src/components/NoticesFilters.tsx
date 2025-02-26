@@ -83,10 +83,10 @@ const NoticesFilters = () => {
   };
 
   return (
-    <div className="bg-[#fff4df] rounded-[30px] p-5 space-y-4 relative md:px-8 md:py-10">
+    <div className="bg-[#fff4df] rounded-[30px] p-5 space-y-4 relative md:px-8 md:py-10 mt-10">
       <div className="mb-5 relative after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-[-12px] after:h-[1px] after:bg-[rgba(38,38,38,0.1)] xl:flex">
         <div className="md:flex md:gap-4">
-          <SearchField />
+          <SearchField color="text-black" bg="bg-white" />
           <div className="flex gap-2 md:w-[356px] md:gap-4">
             <Select
               options={categories.map((cat: string) => ({

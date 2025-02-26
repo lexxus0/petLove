@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { RxHamburgerMenu } from "react-icons/rx";
 import mobSvg from "../assets/images/logo/mobLogo.svg";
@@ -14,10 +14,25 @@ import UserNav from "./UserNav";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isLoggedIn = useAppSelector(selectIsLoggedIn);
-  const condition = location.pathname === "/home";
+
+  const [isFirstVisit, setIsFirstVisit] = useState(true);
+
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem("visited");
+
+    if (hasVisited) {
+      setIsFirstVisit(false);
+    } else {
+      sessionStorage.setItem("visited", "true");
+    }
+  }, []);
+
+  const condition = isFirstVisit
+    ? location.pathname === "/"
+    : location.pathname === "/home";
   const isMd = useMediaQuery({ minWidth: 768 });
 
-  const currentPath = window.location.pathname;
+  const currentPath = location.pathname;
 
   const links = [
     { href: "/news", label: "News" },
@@ -51,12 +66,12 @@ const Header = () => {
                 href={href}
                 className={`rounded-4xl border cursor-pointer border-solid px-6 py-3 text-sm 
     hover:border-[#f6b83d] transition-all duration-300 ease-in-out  
-    ${currentPath === href ? "text-black border-[#f6b83d]" : ""}
     ${
       condition
         ? "text-white border-[rgba(255,255,255,0.4)] hover:border-blue-600"
         : "text-black border-[rgba(38,38,38,0.15)]"
     }
+    ${currentPath === href ? "!text-black !border-[#f6b83d]" : ""}
   `}
               >
                 {label}
@@ -76,7 +91,7 @@ const Header = () => {
 
       <button onClick={() => setIsOpen(!isOpen)} className="xl:hidden">
         <RxHamburgerMenu
-          className={`cursor-pointer md:text-3xl ${
+          className={`cursor-pointer size-8 ${
             condition ? "text-white" : "text-black"
           }`}
         />

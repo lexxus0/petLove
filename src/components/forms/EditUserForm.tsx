@@ -8,6 +8,7 @@ import { MdOutlineCloudUpload } from "react-icons/md";
 import { IUser } from "../../interfaces/interfaces";
 import pic from "../../assets/images/header/notLoggedIn.svg";
 import { editUserInfo } from "../../store/auth/operations";
+import _ from "lodash";
 
 type EditUserFormProps = {
   onClose: () => void;
@@ -33,7 +34,14 @@ const EditUserForm: React.FC<EditUserFormProps> = ({ onClose }) => {
     },
   });
 
+  const [initialValues] = useState(user);
+
   const onSubmit = async (data: IUser) => {
+    if (_.isEqual(initialValues, data)) {
+      onClose();
+      return;
+    }
+
     dispatch(editUserInfo(data));
     onClose();
   };

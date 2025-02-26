@@ -32,7 +32,7 @@ const MyNotices = () => {
         </div>
         {active === "favorite" ? (
           <ul className="my-10 flex flex-col gap-5 md:flex-row md:flex-wrap md:mt-11 md:mb-[60px] xl:gap-[31px] xl:mt-10">
-            {favorites.length !== 0 ? (
+            {Array.isArray(favorites) && favorites !== null ? (
               favorites.map((favorite: INotices) => (
                 <NoticesItem
                   key={favorite._id}
@@ -54,7 +54,7 @@ const MyNotices = () => {
           </ul>
         ) : (
           <ul className="my-5 flex flex-col gap-5 md:flex-row md:flex-wrap md:mt-11 md:mb-[60px] xl:gap-[31px] xl:mt-10 xl:flex-row">
-            {viewed.length !== 0 ? (
+            {Array.isArray(viewed) && viewed !== null ? (
               viewed.map((view: INotices) => (
                 <NoticesItem
                   key={view._id}
@@ -69,7 +69,8 @@ const MyNotices = () => {
                 <span className="font-bold text-[#f6b83d]">
                   looks like there aren't viewed furries
                 </span>{" "}
-                on our adorable page yet. Do not worry! View your pets on the{" "}
+                on our adorable page yet. Do not worry! View your pets on the
+                "find your favorite pet" page.
               </p>
             )}
           </ul>

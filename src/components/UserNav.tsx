@@ -1,10 +1,18 @@
 import { selectUser } from "../store/auth/selectors";
-import { useAppSelector } from "../store/tools/hooks";
+import { useAppDispatch, useAppSelector } from "../store/tools/hooks";
 import defaultPic from "../assets/images/header/notLoggedIn.svg";
 import LogOutBtn from "./LogOutBtn";
 import { useLocation } from "react-router-dom";
+import { refreshUser } from "../store/auth/operations";
+import { useEffect } from "react";
 
 const UserNav = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   const user = useAppSelector(selectUser);
   const location = useLocation();
   const condition = location.pathname === "/home";

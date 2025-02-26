@@ -3,8 +3,11 @@ import { CiHeart } from "react-icons/ci";
 import { INotices } from "../interfaces/interfaces";
 import { convertDate, convertName, convertPrice } from "../helpers/helpers";
 import StarRating from "./StarRating";
-import { useAppDispatch } from "../store/tools/hooks";
+import { useAppDispatch, useAppSelector } from "../store/tools/hooks";
 import { addNoticeToFavorites } from "../store/auth/operations";
+import { selectIsLoggedIn } from "../store/auth/selectors";
+import { useState } from "react";
+import ModalAttention from "./ModalAttention";
 
 type ModalNoticeProps = {
   isOpen: boolean;
@@ -18,6 +21,19 @@ const ModalNotice: React.FC<ModalNoticeProps> = ({
   notice,
 }) => {
   const dispatch = useAppDispatch();
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
+
+  const [isAttentionOpen, setIsAttentionOpen] = useState(false);
+
+  const toggleModal = () => setIsAttentionOpen((prev) => !prev);
+
+  const handleClick = () => {
+    if (isLoggedIn) {
+      dispatch(addNoticeToFavorites(notice._id));
+    } else {
+      toggleModal();
+    }
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -69,7 +85,7 @@ const ModalNotice: React.FC<ModalNoticeProps> = ({
         <div className="flex gap-2.5 w-[279px] mx-auto md:w-[330px]">
           <button
             type="button"
-            onClick={() => dispatch(addNoticeToFavorites(notice._id))}
+            onClick={() => handleClick()}
             className="flex flex-1 items-center justify-center gap-1 flex-nowrap rounded-4xl bg-[#f6b83d] text-white w-[135px] md:w-[160px]"
           >
             Add to
@@ -79,6 +95,7 @@ const ModalNotice: React.FC<ModalNoticeProps> = ({
             Contact
           </button>
         </div>
+        <ModalAttention isOpen={isAttentionOpen} onClose={toggleModal} />
       </div>
     </Modal>
   );

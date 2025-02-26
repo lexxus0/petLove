@@ -156,6 +156,9 @@ const authSlice = createSlice({
           email: action.payload.email,
           avatar: action.payload.avatar || null,
           phone: action.payload.phone || null,
+          pets: action.payload.pets || [],
+          noticesFavorites: action.payload.noticesFavorites || [],
+          noticesViewed: action.payload.noticesViewed || [],
         };
       })
       .addCase(addPetToUser.fulfilled, (state, action) => {

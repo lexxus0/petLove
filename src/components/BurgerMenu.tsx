@@ -48,7 +48,7 @@ const BurgerMenu = ({ isOpen, closeMenu }: BurgerMenuProps) => {
                 <a href={href} className="text-black">
                   <button
                     className={`rounded-4xl border border-solid border-[rgba(38,38,38,0.15)] px-6 py-3  w-[119px] h-[48px] text-sm text-nowrap  hover:border-[#f6b83d] transition-all duration-300 ease-in-out  
-    ${currentPath === href ? "text-black border-[#f6b83d]" : ""}`}
+    ${currentPath === href ? "!text-black !border-[#f6b83d]" : ""}`}
                   >
                     {label}
                   </button>

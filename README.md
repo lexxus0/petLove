@@ -1,92 +1,104 @@
+# PetLove
+
 PetLove is a modern web application designed to help pet owners and animal lovers connect, share, and manage pet-related notices. Whether you've lost a pet, found one, want to help pets find new homes, or stay updated with pet-related news, PetLove provides a comprehensive platform for all your needs.
 
-✨ Features
+## ✨ Features
 
-📝 Notice Management
+### 📝 Notice Management
+- Browse pet notices across different categories:
+  - 🔍 Lost pets
+  - ✨ Found pets
+  - 💰 Pets for sale
+  - ❤️ Free adoption
+- Add notices to favorites
+- Create your own notices
+- Contact pet owners directly
 
-Browse pet notices across different categories:
-🔍 Lost pets
-✨ Found pets
-💰 Pets for sale
-❤️ Free adoption
-Add notices to favorites
-Create your own notices
-Contact pet owners directly
-👤 User Profile
+### 👤 User Profile
+- Manage personal information
+- Add and manage your pets
+- View your favorite notices
+- Track your posted notices
 
-Personal information management
-Add and manage your pets
-View your favorite notices
-Track your posted notices
-📰 News Feed
+### 📰 News Feed
+- Stay updated with the latest pet-related news
+- Browse recent articles and updates
 
-Stay updated with the latest pet-related news
-Browse recent articles and updates
-🔐 Authentication
+### 🔐 Authentication
+- Secure user registration
+- Login functionality
+- Protected routes for authenticated users
 
-Secure user registration
-Login functionality
-Protected routes for authenticated users
-🎨 Design
+## 🎨 Design
 
 The UI/UX design for PetLove is available on Figma. You can view the layout and design specifications here:
 
-PetLove Figma Layout
+[PetLove Figma Layout](#https://www.figma.com/file/puMNfZVg4YI8UZoJ1QiLLi/Petl%F0%9F%92%9Bve?type=design&node-id=55838-750&mode=design&t=Xg1IwIcKebTl5xGs-0)
 
 Please refer to this design while developing to ensure consistency in the user interface.
 
-🗄 Backend
+## 🗄 Backend
 
-PetLove Backend Docs
+[PetLove Backend Docs](#https://petlove.b.goit.study/api-docs/)
 
-📃 Technical Requirements
+## 🛠️ Technical Stack
 
-PetLove Tech Requirements
+### Core Technologies
+- React 18
+- Redux Toolkit for state management
+- React Router DOM for navigation
+- Axios for API communication
+- TypeScript support
 
-🛠️ Technical Stack
+### UI & Components
+- React Select for dropdown components
+- React Datepicker for date selection
+- Tailwind CSS for styling
 
-Core Technologies
+### Form Management
+- React Hook Form
+- Yup for form validation
+- Hookform Resolvers
 
-React 18
-Redux Toolkit for state management
-React Router DOM for navigation
-Axios for API communication
-TypeScript support
+### Development Tools
+- Vite as build tool
+- ESLint for code linting
+- SWC for fast compilation
 
-React Select for dropdown components
-React Datepicker for date selection
-Tailwindcss for styling
-Form Management
+### Additional Features
+- Redux Persist for state persistence
+- React Helmet Async for document head management
+- React Responsive for responsive design
+- React Loader Spinner for loading states
 
-React Hook Form
-Yup for form validation
-Hookform Resolvers
-Development Tools
-
-Vite as build tool
-ESLint for code linting
-SWC for fast compilation
-Additional Features
-
-Redux Persist for state persistence
-React Helmet Async for document head management
-React Responsive for responsive design
-React Loader Spinner for loading states
-🚀 Getting Started
+## 🚀 Getting Started
 
 Clone the repository:
-git clone https://github.com/YevhenKharchenko/petlove.git
+```sh
+git clone https://github.com/lexxus0/petlove.git
 cd petlove
+```
+
 Install dependencies:
+```sh
 npm install
+```
+
 Start the development server:
+```sh
 npm run dev
+```
+
 Build for production:
+```sh
 npm run build
-🤝 Contributing
+```
+
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-📝 License
+## 📝 License
 
 This project is MIT licensed.
+

@@ -1,13 +1,13 @@
 import React from "react";
-import mobRegImg from "../assets/images/register/mobRegImg.png";
-import tabRegImg from "../assets/images/register/tabRegImg.png";
-import deskRegImg from "../assets/images/register/deskRegImg.png";
-import mobLogImg from "../assets/images/login/mobLogImg.png";
-import tabLogImg from "../assets/images/login/tabLogImg.png";
-import deskLogImg from "../assets/images/login/deskLogImg.png";
-import mobAddPetImg from "../assets/images/addpet/mobAddPetImg.png";
-import tabAddPetImg from "../assets/images/addpet/tabAddPetImg.png";
-import deskAddPetImg from "../assets/images/addpet/deskAddPetImg.png";
+import mobRegImg from "../assets/images/register/mob.webp";
+import tabRegImg from "../assets/images/register/tab.webp";
+import deskRegImg from "../assets/images/register/desk.webp";
+import mobLogImg from "../assets/images/login/mob.webp";
+import tabLogImg from "../assets/images/login/tab.webp";
+import deskLogImg from "../assets/images/login/desk.webp";
+import mobAddPetImg from "../assets/images/addpet/mob.webp";
+import tabAddPetImg from "../assets/images/addpet/tab.webp";
+import deskAddPetImg from "../assets/images/addpet/desk.webp";
 
 interface PetBlockProps {
   type: "register" | "login" | "add-pet";

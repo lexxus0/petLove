@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import mobBg from "../assets/images/loading/mobLoadingImg@2x.png";
-import tabBg from "../assets/images/loading/tabLoadingImg@2x.png";
-import deskBg from "../assets/images/loading/deskLoadingImg@2x.png";
+import mobBg from "../assets/images/loading/mobLoadingImg@2x.webp";
+import tabBg from "../assets/images/loading/tabLoadingImg@2x.webp";
+import deskBg from "../assets/images/loading/deskLoadingImg@2x.webp";
 import heart from "../assets/images/logo/hearticon.png";
 import { motion, AnimatePresence } from "framer-motion";
 

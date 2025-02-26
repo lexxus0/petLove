@@ -1,45 +1,62 @@
-# PetLove
+PetLove
 
 PetLove is a modern web application designed to help pet owners and animal lovers connect, share, and manage pet-related notices. Whether you've lost a pet, found one, want to help pets find new homes, or stay updated with pet-related news, PetLove provides a comprehensive platform for all your needs.
 
-## ✨ Features
+✨ Features
 
-### 📝 Notice Management
-- Browse pet notices across different categories:
-  - 🔍 Lost pets
-  - ✨ Found pets
-  - 💰 Pets for sale
-  - ❤️ Free adoption
-- Add notices to favorites
-- Create your own notices
-- Contact pet owners directly
+📝 Notice Management
 
-### 👤 User Profile
-- Manage personal information
-- Add and manage your pets
-- View your favorite notices
-- Track your posted notices
+Browse pet notices across different categories:
 
-### 📰 News Feed
-- Stay updated with the latest pet-related news
-- Browse recent articles and updates
+🔍 Lost pets
 
-### 🔐 Authentication
-- Secure user registration
-- Login functionality
-- Protected routes for authenticated users
+✨ Found pets
 
-## 🎨 Design
+💰 Pets for sale
+
+❤️ Free adoption
+
+Add notices to favorites
+
+Create your own notices
+
+Contact pet owners directly
+
+👤 User Profile
+
+Manage personal information
+
+Add and manage your pets
+
+View your favorite notices
+
+Track your posted notices
+
+📰 News Feed
+
+Stay updated with the latest pet-related news
+
+Browse recent articles and updates
+
+🔐 Authentication
+
+Secure user registration
+
+Login functionality
+
+Protected routes for authenticated users
+
+🎨 Design
 
 The UI/UX design for PetLove is available on Figma. You can view the layout and design specifications here:
 
-[PetLove Figma Layout](#https://www.figma.com/file/puMNfZVg4YI8UZoJ1QiLLi/Petl%F0%9F%92%9Bve?type=design&node-id=55838-750&mode=design&t=Xg1IwIcKebTl5xGs-0)
+PetLove Figma Layout
 
 Please refer to this design while developing to ensure consistency in the user interface.
 
-## 🗄 Backend
+🗄 Backend
 
-[PetLove Backend Docs](#https://petlove.b.goit.study/api-docs/)
+PetLove Backend Docs
 
 ## 🛠️ Technical Stack
 

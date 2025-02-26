@@ -1,6 +1,6 @@
-import mobImg from "../assets/images/welcome/mobWelcomeImg.png";
-import tabImg from "../assets/images/welcome/tabWelcomeImg.png";
-import deskImg from "../assets/images/welcome/deskWelcomeImg.png";
+import mobImg from "../assets/images/welcome/mob.webp";
+import tabImg from "../assets/images/welcome/tab.webp";
+import deskImg from "../assets/images/welcome/desk.webp";
 
 const HomePage = () => {
   return (

@@ -140,9 +140,9 @@ const NoticesItem: React.FC<NoticesItemProps> = ({
         >
           {type === "add" ? (
             isFavorite ? (
-              <FaHeart className="text-gray-300 size-[24px]" />
+              <FaHeart className="text-gray-300 size-[18px]" />
             ) : (
-              <CiHeart className="text-gray-300 size-[24px]" />
+              <CiHeart className="text-gray-300 size-[18px]" />
             )
           ) : (
             <RiDeleteBin5Line className="text-[#f6b83d] text-lg" />

@@ -46,7 +46,7 @@ const Loader = ({
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
       >
         <motion.h1
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 text-7xl"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}

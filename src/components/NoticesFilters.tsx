@@ -196,46 +196,54 @@ const NoticesFilters = () => {
       </div>
 
       <div className="flex gap-2.5 flex-wrap">
-        <label>
-          <button
-            className={`rounded-[30px] px-4 py-2 font-medium text-sm md:p-3.5 md:text-base cursor-pointer flex items-center gap-2
+        <button
+          className={`rounded-[30px] px-4 py-2 font-medium text-sm md:p-3.5 md:text-base cursor-pointer flex items-center gap-2
               ${
                 isPopular
                   ? "bg-[#f6b83d] text-white"
                   : "bg-white text-[#262626]"
               }`}
-            onClick={() => {
-              if (!isPopular) {
-                dispatch(sortByPopularityAsc());
-              } else {
-                dispatch(sortByPopularityDesc());
-              }
-            }}
-          >
-            Popular
-            {isPopular && (
-              <FaTimes className="w-4 h-4 text-white cursor-pointer" />
-            )}
-          </button>
-        </label>
-        <label>
-          <button
-            className={`rounded-[30px] px-4 py-2 font-medium text-sm md:p-3.5 md:text-base cursor-pointer flex items-center gap-2
-            ${isCheap ? "bg-[#f6b83d] text-white" : "bg-white text-[#262626]"}`}
-            onClick={() => {
-              if (!isCheap) {
-                dispatch(sortByPriceAsc());
-              } else {
+          onClick={() => {
+            if (!isPopular) {
+              dispatch(sortByPopularityAsc());
+            } else {
+              dispatch(sortByPopularityDesc());
+            }
+          }}
+        >
+          Popular
+          {isPopular && (
+            <FaTimes
+              className="w-4 h-4 text-white cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
                 dispatch(sortByPriceDesc());
-              }
-            }}
-          >
-            Cheap
-            {isCheap && (
-              <FaTimes className="w-4 h-4 text-white cursor-pointer" />
-            )}
-          </button>
-        </label>
+              }}
+            />
+          )}
+        </button>
+        <button
+          className={`rounded-[30px] px-4 py-2 font-medium text-sm md:p-3.5 md:text-base cursor-pointer flex items-center gap-2
+  ${isCheap ? "bg-[#f6b83d] text-white" : "bg-white text-[#262626]"}`}
+          onClick={() => {
+            if (!isCheap) {
+              dispatch(sortByPriceAsc());
+            } else {
+              dispatch(sortByPriceDesc());
+            }
+          }}
+        >
+          Cheap
+          {isCheap && (
+            <FaTimes
+              className="w-4 h-4 text-white cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                dispatch(sortByPriceDesc());
+              }}
+            />
+          )}
+        </button>
       </div>
 
       <button

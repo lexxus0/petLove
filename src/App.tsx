@@ -7,6 +7,7 @@ import { useAppDispatch } from "./store/tools/hooks";
 import RestrictedRoute from "./routes/RestrictedRoute";
 import PrivateRoute from "./routes/PrivateRoute";
 import Loader from "./components/Loading";
+import { ToastContainer } from "react-toastify";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const NewsPage = lazy(() => import("./pages/NewsPage"));
@@ -69,6 +70,7 @@ function App() {
         <Route path="/add-pet" element={<AddPetPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <ToastContainer position="top-right" autoClose={3000} />
     </Layout>
   );
 }

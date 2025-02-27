@@ -1,13 +1,15 @@
 import Modal from "./Modal";
+
 import { CiHeart } from "react-icons/ci";
 import { INotices } from "../interfaces/interfaces";
 import { convertDate, convertName, convertPrice } from "../helpers/helpers";
 import StarRating from "./StarRating";
 import { useAppDispatch, useAppSelector } from "../store/tools/hooks";
 import { addNoticeToFavorites } from "../store/auth/operations";
-import { selectIsLoggedIn } from "../store/auth/selectors";
+import { selectFavorites, selectIsLoggedIn } from "../store/auth/selectors";
 import { useState } from "react";
 import ModalAttention from "./ModalAttention";
+import { toast, Zoom } from "react-toastify";
 
 type ModalNoticeProps = {
   isOpen: boolean;
@@ -24,12 +26,40 @@ const ModalNotice: React.FC<ModalNoticeProps> = ({
   const isLoggedIn = useAppSelector(selectIsLoggedIn);
 
   const [isAttentionOpen, setIsAttentionOpen] = useState(false);
+  const favorites = useAppSelector(selectFavorites);
+  const isFavorite = (id: string) =>
+    favorites.some((fav: INotices) => fav._id === id);
 
   const toggleModal = () => setIsAttentionOpen((prev) => !prev);
 
   const handleClick = () => {
     if (isLoggedIn) {
-      dispatch(addNoticeToFavorites(notice._id));
+      if (!isFavorite(notice._id)) {
+        dispatch(addNoticeToFavorites(notice._id));
+        toast.success("Successfully added to favorites!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Zoom,
+        });
+      } else {
+        toast.warning("This notice is already in your favorites.", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Zoom,
+        });
+      }
     } else {
       toggleModal();
     }

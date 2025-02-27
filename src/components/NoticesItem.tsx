@@ -1,4 +1,5 @@
 import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { INotices } from "../interfaces/interfaces";
 import { convertDate, convertName, convertPrice } from "../helpers/helpers";
@@ -138,11 +139,11 @@ const NoticesItem: React.FC<NoticesItemProps> = ({
           }
         >
           {type === "add" ? (
-            <CiHeart
-              className={`size={24}  ${
-                isFavorite ? "fill-blue-500" : "text-black"
-              }`}
-            />
+            isFavorite ? (
+              <FaHeart className="text-gray-300 size-[24px]" />
+            ) : (
+              <CiHeart className="text-gray-300 size-[24px]" />
+            )
           ) : (
             <RiDeleteBin5Line className="text-[#f6b83d] text-lg" />
           )}
